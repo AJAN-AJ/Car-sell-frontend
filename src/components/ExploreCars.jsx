@@ -19,9 +19,8 @@ function ExploreCars() {
     const matchesSearch = name.includes(search.toLowerCase());
 
     const matchesCategory =
-      activeCategory === "All" ||
-      car.brand === activeCategory ||
-      car.category === activeCategory;
+  activeCategory === "All" || car.brand === activeCategory;
+
 
     return matchesSearch && matchesCategory;
   });
@@ -77,7 +76,10 @@ function ExploreCars() {
               car={{
                 id: car.id,
                 name: `${car.brand} ${car.model}`,
-                price: `MK ${car.price.toLocaleString()}`,
+                price: car.price
+  ? `MK ${car.price.toLocaleString()}`
+  : "Price on request",
+
                 location: car.location || "Malawi",
                 image: mainPhoto?.url,
               }}
