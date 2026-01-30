@@ -4,6 +4,7 @@ import WhatsAppButton from "../components/WhatsAppButton.jsx";
 import CarInfo from "../components/CarInfo.jsx";
 import Footer from "../components/Footer.jsx";
 import { fetchCarById } from "../services/api";
+import { Link } from "react-router-dom";
 
 function CarDetails() {
   const { id } = useParams();
@@ -28,6 +29,12 @@ function CarDetails() {
   return (
     <>
       <div className="px-2 py-6">
+        <Link to="/cars">
+          <button className="mb-4">
+          <img src="/back.png" alt="" />
+        </button>
+        </Link>
+       
         <img
           src={activeImage}
           alt="Car"
@@ -63,7 +70,6 @@ function CarDetails() {
           Contact Seller
         </button>
       </WhatsAppButton>
-
       <Footer />
     </>
   );

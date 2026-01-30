@@ -4,6 +4,7 @@ import Home from './pages/Home.jsx'
 import CarDetails from './pages/CarDetails.jsx';
 import HowToBuy from './pages/HowToBuy.jsx';
 import Cars from './pages/Cars.jsx'
+import BackToTop from './components/BackToTop.jsx';
 
 function Layout() {
   const location = useLocation();
@@ -32,6 +33,7 @@ function Layout() {
 export default function App(){
   return(
     <BrowserRouter>
+      <BackToTop/>
       <Layout/> 
     </BrowserRouter>
   );
