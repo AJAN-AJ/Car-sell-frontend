@@ -68,7 +68,7 @@ function CarDetails() {
 
 ${car.name}
 Price: MK ${car.price}
-Location: ${car.location}
+Location: ${photo.url}
 
 Image:
 ${car.image}
