@@ -68,10 +68,10 @@ function CarDetails() {
 
 ${car.name}
 Price: MK ${car.price}
-Location: ${photo.url}
+Location: ${car.location}
 
 Image:
-${car.image}
+${car.url}
 `}
 >
   <button className="w-[95%] mx-auto bg-[#270AA8] text-white py-4 rounded-2xl font-semibold">
