@@ -15,7 +15,7 @@ function Navbar() {
       <div className="fixed z-50 mt-2 m-auto left-0 right-0 bg-[#303030] rounded-full px-6 py-6 w-[95%] md:w-[100%] flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2 text-white font-bold text-lg">
-          🚗 <span>Car Sale</span>
+          <span>Car Selling Agency</span>
         </div>
 
         {/* Menu Button */}
