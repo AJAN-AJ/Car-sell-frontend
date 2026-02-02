@@ -63,13 +63,21 @@ function CarDetails() {
 
       {/* CTA */}
       <WhatsAppButton
-        phone="265999988511"
-        message={`I am interested in this car ${car.brand} ${car.model} | MK ${car.price} which is in Malawi`}
-      >
-        <button className="w-[95%] mx-auto flex items-center justify-center bg-[#270AA8] text-white py-4 rounded-2xl font-semibold mb-10">
-          Contact Seller
-        </button>
-      </WhatsAppButton>
+  phone="265999988511"
+  message={`Hello, I’m interested in this car:
+
+${car.name}
+Price: MK ${car.price}
+Location: ${car.location}
+
+Image:
+${car.image}
+`}
+>
+  <button className="w-[95%] mx-auto bg-[#270AA8] text-white py-4 rounded-2xl font-semibold">
+    Contact Seller
+  </button>
+</WhatsAppButton>
       <Footer />
     </>
   );
