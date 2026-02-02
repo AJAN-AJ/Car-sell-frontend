@@ -23,7 +23,7 @@ function CarDetails() {
   }, [id]);
 
   if (!car) {
-    return <p className="text-center py-10">Loading car...</p>;
+    return <p className="text-center py-10" animate-pulse>Loading car...</p>;
   }
 
   return (
