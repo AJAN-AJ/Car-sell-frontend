@@ -7,11 +7,27 @@ const categories = ["All", "Toyota", "Mazda", "Nissan", "SUV", "Pickup"];
 function ExploreCars() {
   const [cars, setCars] = useState([]);
   const [search, setSearch] = useState("");
+const [loading, setLoading] = useState(true);
+const [error, setError] = useState(null);
+
+
   const [activeCategory, setActiveCategory] = useState("All");
 
   useEffect(() => {
-    fetchCars().then(setCars).catch(console.error);
-  }, []);
+  const loadCars = async () => {
+    try {
+      setLoading(true);
+      const data = await fetchCars();
+      setCars(data);
+    } catch (err) {
+      setError("Failed to load cars");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  loadCars();
+}, []);
 
   const filteredCars = cars.filter((car) => {
     const name = `${car.brand} ${car.model}`.toLowerCase();
@@ -64,6 +80,11 @@ function ExploreCars() {
       <p className="text-sm text-gray-500 mb-6">
         Explore the best cars we have and choose
       </p>
+{loading && (
+  <div className="flex justify-center items-center py-20">
+    <p className="text-gray-500 text-sm">Loading cars...</p>
+  </div>
+)}
 
       {/* Grid */}
       <div className="grid grid-cols-2 gap-4">
